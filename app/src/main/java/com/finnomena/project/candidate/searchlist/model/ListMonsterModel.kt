@@ -1,4 +1,4 @@
-package com.finnomena.project.candidate.model
+package com.finnomena.project.candidate.searchlist.model
 
 import com.google.gson.annotations.SerializedName
 

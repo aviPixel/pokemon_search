@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".monsterdetail.view.MonsterDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:elevation="0dp">
+
+            <com.finnomena.project.core.custom_ui.SystemUISpaceView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:systemUI="top"
+                app:isConsumeInsets="true"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarMain"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:contentInsetStart="0dp"
+                android:contentInsetLeft="0dp"
+                android:gravity="center"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:titleTextAppearance="@style/Toolbar.TitleText">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Detail Monster"
+                        android:gravity="center"
+                        style="@style/appTextTitle"/>
+
+                    <include layout="@layout/view_frame_back"/>
+
+                </FrameLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+<!--        content-->
+        <LinearLayout
+            android:id="@+id/frameDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|top"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivMonster"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/color_bg_edittext"
+                android:layout_marginTop="@dimen/app_margin"/>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin"
+                style="@style/appTextTitle"
+                tools:text="tvName"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/app_margin"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_content_18"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Height"/>
+
+                <TextView
+                    android:id="@+id/tvHeight"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    style="@style/appTextDefault"
+                    tools:text="tvHeight"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_content_18"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Weight"/>
+
+                <TextView
+                    android:id="@+id/tvWeight"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    style="@style/appTextDefault"
+                    tools:text="tvHeight"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/app_margin"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_content_18"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:text="Type"/>
+
+                <LinearLayout
+                    android:id="@+id/frameTypeMonster"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

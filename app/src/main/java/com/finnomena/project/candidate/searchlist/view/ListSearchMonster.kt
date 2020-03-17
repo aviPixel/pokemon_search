@@ -1,27 +1,26 @@
-package com.finnomena.project.candidate.view
+package com.finnomena.project.candidate.searchlist.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finnomena.project.candidate.R
-import com.finnomena.project.candidate.interfaces.IListSearchMonster
-import com.finnomena.project.candidate.view.adapter.ListMonsterAdapter
-import com.finnomena.project.candidate.viewmodel.ListMonsterViewModel
-import com.finnomena.project.candidate.viewmodel.ListMonsterViewModelFactory
+import com.finnomena.project.candidate.monsterdetail.view.MonsterDetailActivity
+import com.finnomena.project.candidate.searchlist.interfaces.IListSearchMonster
+import com.finnomena.project.candidate.searchlist.view.adapter.ListMonsterAdapter
+import com.finnomena.project.candidate.searchlist.viewmodel.ListMonsterViewModel
+import com.finnomena.project.candidate.searchlist.viewmodel.ListMonsterViewModelFactory
 import com.finnomena.project.core.utils.checkClickLastTime
 import com.finnomena.project.core.utils.hideSoftInputKeyboard
 import com.finnomena.project.core.utils.setStatusBarWhite
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 
-class ListSearchMonster : AppCompatActivity(), IListSearchMonster.view, IListSearchMonster.api {
+class ListSearchMonster : AppCompatActivity(), IListSearchMonster.view, IListSearchMonster.api, IListSearchMonster.navigation {
 
     private var recyclerAdapter: ListMonsterAdapter? = null
 
@@ -48,7 +47,9 @@ class ListSearchMonster : AppCompatActivity(), IListSearchMonster.view, IListSea
         val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         rvListMonster?.layoutManager = layoutManager
         recyclerAdapter = ListMonsterAdapter(this, object : ListMonsterAdapter.OnItemClickListener {
-            override fun onItemClick(id: String){}
+            override fun onItemClick(url: String){
+                goToMonsterDetail(url)
+            }
         })
         rvListMonster?.adapter = recyclerAdapter
 
@@ -124,6 +125,12 @@ class ListSearchMonster : AppCompatActivity(), IListSearchMonster.view, IListSea
 
     override fun apiGetListMonster() {
         viewModel.apiGetListMonster()
+    }
+
+    override fun goToMonsterDetail(url: String) {
+        val intent = Intent(this, MonsterDetailActivity::class.java)
+        intent.putExtra("url", url)
+        startActivity(intent)
     }
 
 }

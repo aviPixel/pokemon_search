@@ -1,8 +1,8 @@
-package com.finnomena.project.candidate.viewmodel
+package com.finnomena.project.candidate.searchlist.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.finnomena.project.candidate.interfaces.IListSearchMonster
+import com.finnomena.project.candidate.searchlist.interfaces.IListSearchMonster
 
 @Suppress("UNCHECKED_CAST")
 class ListMonsterViewModelFactory(private val act: IListSearchMonster.view) : ViewModelProvider.NewInstanceFactory() {

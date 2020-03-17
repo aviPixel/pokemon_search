@@ -1,4 +1,4 @@
-package com.finnomena.project.candidate.view.adapter
+package com.finnomena.project.candidate.searchlist.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.finnomena.project.candidate.R
 import com.finnomena.project.candidate.databinding.ViewholderEmptyTopBinding
 import com.finnomena.project.candidate.databinding.ViewholderItemBinding
-import com.finnomena.project.candidate.model.ListMonsterModel
+import com.finnomena.project.candidate.searchlist.model.ListMonsterModel
 import com.finnomena.project.core.appmanagement.ViewHolderEmptyTop
 import com.finnomena.project.core.utils.GlideLib
 import kotlin.collections.ArrayList
@@ -24,7 +24,7 @@ class ListMonsterAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private lateinit var mListData: ArrayList<ListMonsterModel.Results>
 
     interface OnItemClickListener {
-        fun onItemClick(id: String)
+        fun onItemClick(url: String)
     }
 
     constructor(context: Context, listener: OnItemClickListener) : this() {
@@ -94,6 +94,10 @@ class ListMonsterAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             holder?.tvName?.text = item.name
             holder?.ivMonster?.let {
                 GlideLib.setImage(mContext, "https://pokeres.bastionbot.org/images/pokemon/${(item.id?.plus(1))}.png", it)
+            }
+
+            holder?.frameItem?.setOnClickListener {
+                item.url?.let { url -> mListener.onItemClick(url) }
             }
 
         }

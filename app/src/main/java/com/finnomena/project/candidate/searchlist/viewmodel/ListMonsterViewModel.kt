@@ -1,15 +1,11 @@
-package com.finnomena.project.candidate.viewmodel
+package com.finnomena.project.candidate.searchlist.viewmodel
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.finnomena.project.candidate.interfaces.IListSearchMonster
-import com.finnomena.project.candidate.model.ListMonsterModel
-import com.finnomena.project.candidate.services.ListSearchMonsterApi
+import com.finnomena.project.candidate.searchlist.interfaces.IListSearchMonster
+import com.finnomena.project.candidate.searchlist.model.ListMonsterModel
+import com.finnomena.project.candidate.searchlist.services.ListSearchMonsterApi
 import com.finnomena.project.core.network.ApiCallback
 import com.finnomena.project.core.network.ApiService
-import com.google.gson.Gson
 
 class ListMonsterViewModel(private val act: IListSearchMonster.view) : ViewModel() {
 

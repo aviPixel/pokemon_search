@@ -1,4 +1,4 @@
-package com.finnomena.project.candidate.interfaces
+package com.finnomena.project.candidate.searchlist.interfaces
 
 
 interface IListSearchMonster {
@@ -30,6 +30,12 @@ interface IListSearchMonster {
     interface api {
 
         fun apiGetListMonster()
+
+    }
+
+    interface navigation {
+
+        fun goToMonsterDetail(url: String)
 
     }
 

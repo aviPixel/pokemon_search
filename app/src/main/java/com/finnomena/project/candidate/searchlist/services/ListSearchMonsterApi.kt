@@ -1,6 +1,6 @@
-package com.finnomena.project.candidate.services
+package com.finnomena.project.candidate.searchlist.services
 
-import com.finnomena.project.candidate.model.ListMonsterModel
+import com.finnomena.project.candidate.searchlist.model.ListMonsterModel
 import retrofit2.Call
 import retrofit2.http.*
 

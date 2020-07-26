@@ -1,5 +1,3 @@
-# Android project for FINNOMENA candidate
-
 ## Objective
 This assignment would like to assess your Android development skills
 
